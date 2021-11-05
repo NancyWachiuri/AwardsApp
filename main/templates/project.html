@@ -1,0 +1,102 @@
+
+{% extends 'accounts/base.html' %}
+{% block content %}
+
+
+
+
+<style>
+
+body{ 
+
+
+background-image:url(' static/images/mad.jpg');
+background-repeat:no-repeat;
+background-size:cover;
+
+}
+
+.card{
+  display: flex;
+  display: inline-block;
+  padding: 0 2rem;
+  font-size: 1.3rem;
+}
+
+
+
+</style>
+
+
+
+
+  <div class="container">
+
+
+
+  <div class="card-body">
+
+<div class="row ">
+
+{% for peter in peters %}
+
+<div class="col-md-4">
+
+  
+    
+
+<div class="card">
+      <img src="{{peter.image}}" alt="Image" class="img-fluid">
+
+      <div class="media-content">
+        <p class="title is-4 no-padding" style="text-transform: capitalize;
+        font-size: 1.5rem;
+        font-style: italic;
+        font-family: 'Zen Old Mincho', serif;
+        color: #031638;">{{peter.author}}</p>
+        <p>
+          <span class="title is-6">
+              <span style="text-transform: capitalize;
+              font-size: 1.5rem;
+              font-style: italic;
+              font-family: 'Zen Old Mincho', serif;
+              color: #031638;">Read more</span><a href="{% url 'project_details' peter.id %}">  {{peter.name}} </a> </span> </p>
+
+      </div>
+      <div class="content" style="text-transform: capitalize;
+      font-size: 1.2rem;
+      font-style: italic;
+      font-family: 'Zen Old Mincho', serif;
+      color: #031638;">
+        {{peter.description}}
+        <div class="background-icon"><span class="icon-twitter"></span></div>
+      </div>
+</div>
+
+  
+    
+
+
+
+
+
+  
+
+</div>
+
+
+
+{% endfor%}
+
+</div>
+
+
+  </div>
+
+
+
+
+  </div>
+
+
+{% endblock%}
