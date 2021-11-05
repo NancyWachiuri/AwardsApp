@@ -21,9 +21,18 @@
 .navbar-menu{
   text-transform: capitalize;
   font-size: 1.5rem;
-  font-style: italic;
   font-family: 'Zen Old Mincho', serif;
-  color: #031638;
+  color: #f2f8f8;
+}
+body{
+  background-image: url("https://wallpapercave.com/wp/wp9163643.jpg");
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #d2f0f0;
+  height : auto;
+
+
 }
 
 
@@ -33,9 +42,10 @@
 
 
   <body>
-  <section class="section" style="background-color: rgb(6, 58, 59);">
+
+  <section class="section" >
     <div class="container">
-        <nav class="navbar" role="navigation" aria-label="main navigation">
+        <nav class="navbar" role="navigation" aria-label="main navigation" >
             <div class="navbar-brand">
           
               <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -45,34 +55,34 @@
               </a>
             </div>
           
-            <div id="navbarBasicExample" class="navbar-menu">
+            <div id="navbarBasicExample" class="navbar-menu" style = "background-color: #85d6d6;">
               <div class="navbar-start">
-                <a class="navbar-item" href="/">
+                <a style="text-decoration: none; font-size:20px " class="navbar-item" href="/">
                   Home
                 </a>
 
-                <a class="navbar-item" href="{% url 'add_project' %}">
+                <a style="text-decoration: none; font-size:20px "class="navbar-item" href="{% url 'add_project' %}">
                   add project
                 </a>
                 
           
                 <div class="navbar-item has-dropdown is-hoverable">
-                  <a class="navbar-link">
+                  <a style="text-decoration: none; font-size:20px " class="navbar-link">
                     Settings
                   </a>
           
                   <div class="navbar-dropdown">
                     
-                    <a class="navbar-item">
+                    <a style="text-decoration: none; font-size:20px " class="navbar-item">
                       Contacts
                     </a>
                     
                    
-                    <a class="navbar-item">
+                    <a style="text-decoration: none; font-size:20px " class="navbar-item">
                       Report an issue
                     </a>
                     <hr class="navbar-divider">
-                    <a class="navbar-item" href="{% url 'logout' %}">
+                    <a style="text-decoration: none; font-size:20px " class="navbar-item" href="{% url 'logout' %}">
                         Logout
                       </a>
                   </div>
