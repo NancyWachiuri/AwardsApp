@@ -48,8 +48,8 @@
                 <h5 class="text-left">Reviewer: {{review.user.username}}</h5>
                 <h5>Rating: {{review.rating}}</h5>
                 {% if request.user == review.user %}
-                <a href="{% url 'main:edit_review' project.id review.id %}" class="btn btn-success" onclick="return confirm('Are you sure you want to edit this?')">Edit Review</a>
-                <a href="{% url 'main:delete_review' project.id review.id %}" class="btn btn-danger" onclick="return confirm('Are you sure to delete this?')">Delete</a>
+                <a href="{% url 'edit_review' project.id review.id %}" class="btn btn-success" onclick="return confirm('Are you sure you want to edit this?')">Edit Review</a>
+                <a href="{% url 'delete_review' project.id review.id %}" class="btn btn-danger" onclick="return confirm('Are you sure to delete this?')">Delete</a>
                 {% endif %}
             </div>
             

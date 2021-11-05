@@ -116,14 +116,14 @@ def edit_review(request, project_id, review_id):
                     # adding limit for rating
                     if (data.rating >10) or (data.rating <0):
                         error = "Out of range. Please select rating from  0 to 10"
-                        return render(request, "main/editreview.html", {"error":error, "form":form})
+                        return render(request, "editreview.html", {"error":error, "form":form})
                     else:    
                     # ===
                         data.save()
-                        return redirect("main:detail", project_id) 
+                        return redirect("project_details", project_id) 
             else:
                 form=ReviewForm(instance=review)
-            return render(request,'main/editreview.html', {"form":form})
+            return render(request,'editreview.html', {"form":form})
         else:
          return redirect("accounts:login")                
 # delete review
@@ -136,7 +136,7 @@ def delete_review(request, project_id, review_id):
         if request.user == review.user:
             # grant user to review
            review.delete()
-        return redirect("main:detail", project_id)
+        return redirect("project_details", project_id)
        
     else:
         return redirect("accounts:login")      
