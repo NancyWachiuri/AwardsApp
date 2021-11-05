@@ -101,10 +101,10 @@ def add_review(request, id):
         return redirect("accounts:login")              
 
  #logic to delete a comment
-def edit_review(request, project_id, review_id):
+def edit_review(request,id):
     if request.user.is_authenticated:
-        project=Project.objects.get(id=project_id)
-        review=Review.objects.get(project=project, id=review_id)
+        project=Project.objects.get(id=id)
+        review=Review.objects.get(project=project, id=id)
 
         # check if the review was done by looged in user
         if request.user == review.user:
@@ -120,23 +120,23 @@ def edit_review(request, project_id, review_id):
                     else:    
                     # ===
                         data.save()
-                        return redirect("main:detail", project_id) 
+                        return redirect("project_details") 
             else:
                 form=ReviewForm(instance=review)
             return render(request,'main/editreview.html', {"form":form})
         else:
          return redirect("accounts:login")                
 # delete review
-def delete_review(request, project_id, review_id):
+def delete_review(request,id):
     if request.user.is_authenticated:
-        project=Project.objects.get(id=project_id)
-        review=Review.objects.get(project=project, id=review_id)
+        project=Project.objects.get(id=id)
+        review=Review.objects.get(project=project, id=id)
 
         # check if the review was done by looged in user
         if request.user == review.user:
             # grant user to review
            review.delete()
-        return redirect("main:detail", project_id)
+        return redirect("project_details")
        
     else:
         return redirect("accounts:login")      
