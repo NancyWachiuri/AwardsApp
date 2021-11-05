@@ -67,6 +67,7 @@ ALLOWED_HOSTS = ['.localhost','.herokuapp.com','.127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'cloudinary_storage',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
